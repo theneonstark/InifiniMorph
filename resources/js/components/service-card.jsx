@@ -7,6 +7,9 @@ import {
   BarChart,
   Landmark,
   Settings,
+  Building2,
+  HandCoins,
+  ReceiptText,
 } from "lucide-react";
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card"
 import { cn } from "@/lib/utils"
@@ -26,6 +29,9 @@ export default function ServiceCard({
     BarChart,
     Landmark,
     Settings,
+    Building2,
+    HandCoins,
+    ReceiptText,
   }
 
   const Icon = IconMap[icon] || Cube

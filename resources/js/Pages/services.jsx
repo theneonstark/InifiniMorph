@@ -58,6 +58,24 @@ export default function Services() {
                 icon: "Settings",
                 href: "/services/custom-software",
               },
+              {
+                title: "Company Registration",
+                description: "Tailored software solutions to address your unique business challenges",
+                icon: "Building2",
+                href: "/services/Company-Registration",
+              },
+              {
+                title: "ITR File",
+                description: "Tailored software solutions to address your unique business challenges",
+                icon: "HandCoins",
+                href: "/services/ITR-File",
+              },
+              {
+                title: "ITR File",
+                description: "Tailored software solutions to address your unique business challenges",
+                icon: "ReceiptText",
+                href: "/services/ITR-File",
+              },
             ].map((service, i) => (
               <ServiceCard
                 key={i}

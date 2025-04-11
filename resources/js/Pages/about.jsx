@@ -31,7 +31,7 @@ export default function About() {
             <div>
               <h2 className="text-3xl font-bold tracking-tight">Our Story</h2>
               <p className="mt-4 text-lg text-muted-foreground">
-                Founded in 2015, TechInnovate began with a simple mission: to help businesses harness the power of
+                Founded in 2023, TechInnovate began with a simple mission: to help businesses harness the power of
                 technology to achieve their goals...
               </p>
               <p className="mt-4 text-lg text-muted-foreground">
