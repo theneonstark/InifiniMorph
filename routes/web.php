@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AdminController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\ServiceController;
 use Illuminate\Foundation\Application;
@@ -32,5 +33,9 @@ Route::get('/contact', function () {
 })->name('contact');
 
 Route::get('/admin',function(){
-    return Inertia::render('Admin/layout');
+    return Inertia::render('Admin/sessionspage');
+});
+
+Route::group(["prefix" => "admin"], function () {
+    Route::get('/{type}', [AdminController::class, 'index']);
 });
