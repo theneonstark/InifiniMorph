@@ -1,7 +1,4 @@
-"use client"
-
 import { useState } from "react"
-
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
@@ -22,6 +19,7 @@ import {
   XAxis,
   YAxis,
 } from "recharts"
+import AdminLayout from "./adminlayout"
 
 const visitData = [
   { name: "Jan", visits: 4000, pageViews: 2400, uniqueVisitors: 2400 },
@@ -81,7 +79,8 @@ export default function AnalyticsPage() {
   const [timeRange, setTimeRange] = useState("year")
 
   return (
-    <div className="flex-1 space-y-4 p-4 md:p-8 pt-6">
+    <AdminLayout>
+      <div className="flex-1 space-y-4 p-4 md:p-8 pt-6">
       <div className="flex items-center justify-between">
         <h2 className="text-3xl font-bold tracking-tight">Analytics</h2>
         <div className="flex items-center gap-2">
@@ -643,5 +642,6 @@ export default function AnalyticsPage() {
         </TabsContent>
       </Tabs>
     </div>
+    </AdminLayout>
   )
 }

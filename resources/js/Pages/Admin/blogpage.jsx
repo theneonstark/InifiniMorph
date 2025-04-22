@@ -12,41 +12,43 @@ import {
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu"
 import { Badge } from "@/components/ui/badge"
+import AdminLayout from "./adminlayout"
 
-export default function ServicesPage() {
+export default function BlogPage() {
   return (
-    <div className="flex-1 space-y-4 p-4 md:p-8 pt-6">
+    <AdminLayout>
+      <div className="flex-1 space-y-4 p-4 md:p-8 pt-6">
       <div className="flex items-center justify-between">
-        <h2 className="text-3xl font-bold tracking-tight">Service Management</h2>
+        <h2 className="text-3xl font-bold tracking-tight">Blog Management</h2>
         <Button>
           <PlusCircle className="mr-2 h-4 w-4" />
-          Add New Service
+          Create New Post
         </Button>
       </div>
       <Card>
         <CardHeader>
-          <CardTitle>Services</CardTitle>
-          <CardDescription>Manage your service offerings, pricing, and availability.</CardDescription>
+          <CardTitle>Blog Posts</CardTitle>
+          <CardDescription>Manage your blog posts, drafts, and publications.</CardDescription>
         </CardHeader>
         <CardContent>
           <Table>
             <TableHeader>
               <TableRow>
-                <TableHead>Name</TableHead>
-                <TableHead>Category</TableHead>
-                <TableHead>Price</TableHead>
+                <TableHead>Title</TableHead>
+                <TableHead>Author</TableHead>
                 <TableHead>Status</TableHead>
+                <TableHead>Published Date</TableHead>
                 <TableHead className="text-right">Actions</TableHead>
               </TableRow>
             </TableHeader>
             <TableBody>
               <TableRow>
-                <TableCell className="font-medium">Website Development</TableCell>
-                <TableCell>Development</TableCell>
-                <TableCell>$2,500</TableCell>
+                <TableCell className="font-medium">10 Tips for Better SEO</TableCell>
+                <TableCell>John Smith</TableCell>
                 <TableCell>
-                  <Badge className="bg-green-500 hover:bg-green-600">Active</Badge>
+                  <Badge className="bg-green-500 hover:bg-green-600">Published</Badge>
                 </TableCell>
+                <TableCell>April 15, 2023</TableCell>
                 <TableCell className="text-right">
                   <DropdownMenu>
                     <DropdownMenuTrigger asChild>
@@ -71,6 +73,7 @@ export default function ServicesPage() {
                     <DropdownMenuContent align="end">
                       <DropdownMenuLabel>Actions</DropdownMenuLabel>
                       <DropdownMenuItem>Edit</DropdownMenuItem>
+                      <DropdownMenuItem>View</DropdownMenuItem>
                       <DropdownMenuSeparator />
                       <DropdownMenuItem className="text-red-600">Delete</DropdownMenuItem>
                     </DropdownMenuContent>
@@ -78,12 +81,12 @@ export default function ServicesPage() {
                 </TableCell>
               </TableRow>
               <TableRow>
-                <TableCell className="font-medium">Mobile App Development</TableCell>
-                <TableCell>Development</TableCell>
-                <TableCell>$5,000</TableCell>
+                <TableCell className="font-medium">The Future of Web Development</TableCell>
+                <TableCell>Sarah Johnson</TableCell>
                 <TableCell>
-                  <Badge className="bg-green-500 hover:bg-green-600">Active</Badge>
+                  <Badge className="bg-green-500 hover:bg-green-600">Published</Badge>
                 </TableCell>
+                <TableCell>March 22, 2023</TableCell>
                 <TableCell className="text-right">
                   <DropdownMenu>
                     <DropdownMenuTrigger asChild>
@@ -108,6 +111,7 @@ export default function ServicesPage() {
                     <DropdownMenuContent align="end">
                       <DropdownMenuLabel>Actions</DropdownMenuLabel>
                       <DropdownMenuItem>Edit</DropdownMenuItem>
+                      <DropdownMenuItem>View</DropdownMenuItem>
                       <DropdownMenuSeparator />
                       <DropdownMenuItem className="text-red-600">Delete</DropdownMenuItem>
                     </DropdownMenuContent>
@@ -115,12 +119,12 @@ export default function ServicesPage() {
                 </TableCell>
               </TableRow>
               <TableRow>
-                <TableCell className="font-medium">SEO Optimization</TableCell>
-                <TableCell>Marketing</TableCell>
-                <TableCell>$1,200</TableCell>
+                <TableCell className="font-medium">Mobile App Design Trends</TableCell>
+                <TableCell>Michael Brown</TableCell>
                 <TableCell>
-                  <Badge className="bg-green-500 hover:bg-green-600">Active</Badge>
+                  <Badge variant="secondary">Draft</Badge>
                 </TableCell>
+                <TableCell>-</TableCell>
                 <TableCell className="text-right">
                   <DropdownMenu>
                     <DropdownMenuTrigger asChild>
@@ -145,6 +149,7 @@ export default function ServicesPage() {
                     <DropdownMenuContent align="end">
                       <DropdownMenuLabel>Actions</DropdownMenuLabel>
                       <DropdownMenuItem>Edit</DropdownMenuItem>
+                      <DropdownMenuItem>Publish</DropdownMenuItem>
                       <DropdownMenuSeparator />
                       <DropdownMenuItem className="text-red-600">Delete</DropdownMenuItem>
                     </DropdownMenuContent>
@@ -152,12 +157,12 @@ export default function ServicesPage() {
                 </TableCell>
               </TableRow>
               <TableRow>
-                <TableCell className="font-medium">Content Creation</TableCell>
-                <TableCell>Marketing</TableCell>
-                <TableCell>$800</TableCell>
+                <TableCell className="font-medium">Digital Marketing Strategies</TableCell>
+                <TableCell>Emily Davis</TableCell>
                 <TableCell>
-                  <Badge variant="outline">Inactive</Badge>
+                  <Badge className="bg-amber-500 hover:bg-amber-600">Scheduled</Badge>
                 </TableCell>
+                <TableCell>May 10, 2023</TableCell>
                 <TableCell className="text-right">
                   <DropdownMenu>
                     <DropdownMenuTrigger asChild>
@@ -182,6 +187,7 @@ export default function ServicesPage() {
                     <DropdownMenuContent align="end">
                       <DropdownMenuLabel>Actions</DropdownMenuLabel>
                       <DropdownMenuItem>Edit</DropdownMenuItem>
+                      <DropdownMenuItem>View</DropdownMenuItem>
                       <DropdownMenuSeparator />
                       <DropdownMenuItem className="text-red-600">Delete</DropdownMenuItem>
                     </DropdownMenuContent>
@@ -189,12 +195,12 @@ export default function ServicesPage() {
                 </TableCell>
               </TableRow>
               <TableRow>
-                <TableCell className="font-medium">UI/UX Design</TableCell>
-                <TableCell>Design</TableCell>
-                <TableCell>$1,800</TableCell>
+                <TableCell className="font-medium">UI/UX Best Practices</TableCell>
+                <TableCell>David Wilson</TableCell>
                 <TableCell>
-                  <Badge className="bg-green-500 hover:bg-green-600">Active</Badge>
+                  <Badge className="bg-green-500 hover:bg-green-600">Published</Badge>
                 </TableCell>
+                <TableCell>February 8, 2023</TableCell>
                 <TableCell className="text-right">
                   <DropdownMenu>
                     <DropdownMenuTrigger asChild>
@@ -219,6 +225,7 @@ export default function ServicesPage() {
                     <DropdownMenuContent align="end">
                       <DropdownMenuLabel>Actions</DropdownMenuLabel>
                       <DropdownMenuItem>Edit</DropdownMenuItem>
+                      <DropdownMenuItem>View</DropdownMenuItem>
                       <DropdownMenuSeparator />
                       <DropdownMenuItem className="text-red-600">Delete</DropdownMenuItem>
                     </DropdownMenuContent>
@@ -230,5 +237,6 @@ export default function ServicesPage() {
         </CardContent>
       </Card>
     </div>
+    </AdminLayout>
   )
 }

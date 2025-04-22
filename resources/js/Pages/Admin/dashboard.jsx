@@ -1,10 +1,12 @@
 import { CalendarDays, FileText, MessageSquare, Users, Clock, Star } from "lucide-react"
 
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
+import AdminLayout from "./adminlayout"
 
 export default function DashboardPage() {
   return (
-    <div className="flex-1 space-y-4 p-4 md:p-8 pt-6">
+    <AdminLayout>
+      <div className="flex-1 space-y-4 p-4 md:p-8 pt-6">
       <div className="flex items-center justify-between">
         <h2 className="text-3xl font-bold tracking-tight">Dashboard</h2>
         <div className="flex items-center space-x-2">
@@ -164,5 +166,6 @@ export default function DashboardPage() {
         </Card>
       </div>
     </div>
+    </AdminLayout>
   )
 }

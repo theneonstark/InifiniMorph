@@ -12,40 +12,40 @@ import {
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu"
 import { Badge } from "@/components/ui/badge"
+import AdminLayout from "./adminlayout"
 
-export default function SessionsPage() {
+export default function ServicesPage() {
   return (
-    <div className="flex-1 space-y-4 p-4 md:p-8 pt-6">
+    <AdminLayout>
+      <div className="flex-1 space-y-4 p-4 md:p-8 pt-6">
       <div className="flex items-center justify-between">
-        <h2 className="text-3xl font-bold tracking-tight">Session Management</h2>
+        <h2 className="text-3xl font-bold tracking-tight">Service Management</h2>
         <Button>
           <PlusCircle className="mr-2 h-4 w-4" />
-          Create New Session
+          Add New Service
         </Button>
       </div>
       <Card>
         <CardHeader>
-          <CardTitle>Sessions</CardTitle>
-          <CardDescription>Manage your training sessions, workshops, and events.</CardDescription>
+          <CardTitle>Services</CardTitle>
+          <CardDescription>Manage your service offerings, pricing, and availability.</CardDescription>
         </CardHeader>
         <CardContent>
           <Table>
             <TableHeader>
               <TableRow>
-                <TableHead>Session Name</TableHead>
-                <TableHead>Date</TableHead>
-                <TableHead>Duration</TableHead>
-                <TableHead>Participants</TableHead>
+                <TableHead>Name</TableHead>
+                <TableHead>Category</TableHead>
+                <TableHead>Price</TableHead>
                 <TableHead>Status</TableHead>
                 <TableHead className="text-right">Actions</TableHead>
               </TableRow>
             </TableHeader>
             <TableBody>
               <TableRow>
-                <TableCell className="font-medium">Web Development Workshop</TableCell>
-                <TableCell>May 15, 2023</TableCell>
-                <TableCell>3 hours</TableCell>
-                <TableCell>25</TableCell>
+                <TableCell className="font-medium">Website Development</TableCell>
+                <TableCell>Development</TableCell>
+                <TableCell>$2,500</TableCell>
                 <TableCell>
                   <Badge className="bg-green-500 hover:bg-green-600">Active</Badge>
                 </TableCell>
@@ -73,18 +73,16 @@ export default function SessionsPage() {
                     <DropdownMenuContent align="end">
                       <DropdownMenuLabel>Actions</DropdownMenuLabel>
                       <DropdownMenuItem>Edit</DropdownMenuItem>
-                      <DropdownMenuItem>View Details</DropdownMenuItem>
                       <DropdownMenuSeparator />
-                      <DropdownMenuItem className="text-red-600">Cancel Session</DropdownMenuItem>
+                      <DropdownMenuItem className="text-red-600">Delete</DropdownMenuItem>
                     </DropdownMenuContent>
                   </DropdownMenu>
                 </TableCell>
               </TableRow>
               <TableRow>
-                <TableCell className="font-medium">UX Design Masterclass</TableCell>
-                <TableCell>May 20, 2023</TableCell>
-                <TableCell>4 hours</TableCell>
-                <TableCell>18</TableCell>
+                <TableCell className="font-medium">Mobile App Development</TableCell>
+                <TableCell>Development</TableCell>
+                <TableCell>$5,000</TableCell>
                 <TableCell>
                   <Badge className="bg-green-500 hover:bg-green-600">Active</Badge>
                 </TableCell>
@@ -112,18 +110,16 @@ export default function SessionsPage() {
                     <DropdownMenuContent align="end">
                       <DropdownMenuLabel>Actions</DropdownMenuLabel>
                       <DropdownMenuItem>Edit</DropdownMenuItem>
-                      <DropdownMenuItem>View Details</DropdownMenuItem>
                       <DropdownMenuSeparator />
-                      <DropdownMenuItem className="text-red-600">Cancel Session</DropdownMenuItem>
+                      <DropdownMenuItem className="text-red-600">Delete</DropdownMenuItem>
                     </DropdownMenuContent>
                   </DropdownMenu>
                 </TableCell>
               </TableRow>
               <TableRow>
-                <TableCell className="font-medium">Digital Marketing Seminar</TableCell>
-                <TableCell>June 5, 2023</TableCell>
-                <TableCell>2 hours</TableCell>
-                <TableCell>30</TableCell>
+                <TableCell className="font-medium">SEO Optimization</TableCell>
+                <TableCell>Marketing</TableCell>
+                <TableCell>$1,200</TableCell>
                 <TableCell>
                   <Badge className="bg-green-500 hover:bg-green-600">Active</Badge>
                 </TableCell>
@@ -151,18 +147,16 @@ export default function SessionsPage() {
                     <DropdownMenuContent align="end">
                       <DropdownMenuLabel>Actions</DropdownMenuLabel>
                       <DropdownMenuItem>Edit</DropdownMenuItem>
-                      <DropdownMenuItem>View Details</DropdownMenuItem>
                       <DropdownMenuSeparator />
-                      <DropdownMenuItem className="text-red-600">Cancel Session</DropdownMenuItem>
+                      <DropdownMenuItem className="text-red-600">Delete</DropdownMenuItem>
                     </DropdownMenuContent>
                   </DropdownMenu>
                 </TableCell>
               </TableRow>
               <TableRow>
-                <TableCell className="font-medium">SEO Strategy Workshop</TableCell>
-                <TableCell>April 25, 2023</TableCell>
-                <TableCell>3 hours</TableCell>
-                <TableCell>15</TableCell>
+                <TableCell className="font-medium">Content Creation</TableCell>
+                <TableCell>Marketing</TableCell>
+                <TableCell>$800</TableCell>
                 <TableCell>
                   <Badge variant="outline">Inactive</Badge>
                 </TableCell>
@@ -190,18 +184,16 @@ export default function SessionsPage() {
                     <DropdownMenuContent align="end">
                       <DropdownMenuLabel>Actions</DropdownMenuLabel>
                       <DropdownMenuItem>Edit</DropdownMenuItem>
-                      <DropdownMenuItem>View Details</DropdownMenuItem>
                       <DropdownMenuSeparator />
-                      <DropdownMenuItem>Reactivate</DropdownMenuItem>
+                      <DropdownMenuItem className="text-red-600">Delete</DropdownMenuItem>
                     </DropdownMenuContent>
                   </DropdownMenu>
                 </TableCell>
               </TableRow>
               <TableRow>
-                <TableCell className="font-medium">Mobile App Development Workshop</TableCell>
-                <TableCell>June 15, 2023</TableCell>
-                <TableCell>5 hours</TableCell>
-                <TableCell>20</TableCell>
+                <TableCell className="font-medium">UI/UX Design</TableCell>
+                <TableCell>Design</TableCell>
+                <TableCell>$1,800</TableCell>
                 <TableCell>
                   <Badge className="bg-green-500 hover:bg-green-600">Active</Badge>
                 </TableCell>
@@ -229,9 +221,8 @@ export default function SessionsPage() {
                     <DropdownMenuContent align="end">
                       <DropdownMenuLabel>Actions</DropdownMenuLabel>
                       <DropdownMenuItem>Edit</DropdownMenuItem>
-                      <DropdownMenuItem>View Details</DropdownMenuItem>
                       <DropdownMenuSeparator />
-                      <DropdownMenuItem className="text-red-600">Cancel Session</DropdownMenuItem>
+                      <DropdownMenuItem className="text-red-600">Delete</DropdownMenuItem>
                     </DropdownMenuContent>
                   </DropdownMenu>
                 </TableCell>
@@ -241,5 +232,6 @@ export default function SessionsPage() {
         </CardContent>
       </Card>
     </div>
+    </AdminLayout>
   )
 }

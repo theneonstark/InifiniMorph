@@ -10,10 +10,12 @@ import {
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu"
 import { Badge } from "@/components/ui/badge"
+import AdminLayout from "./adminlayout"
 
 export default function ReviewsPage() {
   return (
-    <div className="flex-1 space-y-4 p-4 md:p-8 pt-6">
+    <AdminLayout>
+      <div className="flex-1 space-y-4 p-4 md:p-8 pt-6">
       <div className="flex items-center justify-between">
         <h2 className="text-3xl font-bold tracking-tight">Client Review Management</h2>
       </div>
@@ -371,5 +373,6 @@ export default function ReviewsPage() {
         </CardContent>
       </Card>
     </div>
+    </AdminLayout>
   )
 }
