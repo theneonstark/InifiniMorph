@@ -25,11 +25,11 @@ export default function Navbar() {
   }, [])
 
   const navItems = [
-    { name: "Home", href: "" },
-    { name: "Services", href: "/infini/public/services" },
-    { name: "About", href: "/infini/public/about" },
-    { name: "Blog", href: "/infini/public/blog" },
-    { name: "Contact", href: "/infini/public/contact" },
+    { name: "Home", href: "/" },
+    { name: "Services", href: "/services" },
+    { name: "About", href: "/about" },
+    { name: "Blog", href: "/blog" },
+    { name: "Contact", href: "/contact" },
   ]
 
   return (

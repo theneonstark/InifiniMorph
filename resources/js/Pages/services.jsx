@@ -71,10 +71,10 @@ export default function Services() {
                 href: "/services/ITR-File",
               },
               {
-                title: "ITR File",
+                title: "Payroll & Registration",
                 description: "Tailored software solutions to address your unique business challenges",
                 icon: "ReceiptText",
-                href: "/services/ITR-File",
+                href: "/services/Payroll-Registration-Support",
               },
             ].map((service, i) => (
               <ServiceCard
