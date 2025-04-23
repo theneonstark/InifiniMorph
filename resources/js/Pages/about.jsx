@@ -1,5 +1,5 @@
 import React from 'react'
-import { Link } from '@inertiajs/react'
+import { Head, Link } from '@inertiajs/react'
 import { Button } from '@/components/ui/button'
 import RootLayout from './layout'
 
@@ -7,6 +7,7 @@ export default function About() {
   return (
     <RootLayout>
       <div className="flex flex-col min-h-screen">
+      <Head title="About - InfiniMorph Consulting" />
       {/* Hero Section */}
       <section className="pt-24 pb-12 md:pt-32 md:pb-16 bg-muted/50">
         <div className="container px-4 mx-auto text-center">

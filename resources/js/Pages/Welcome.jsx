@@ -4,13 +4,14 @@ import { ArrowRight, CheckCircle } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import ServiceCard from "@/components/service-card"
 import TestimonialSlider from "@/components/testimonial-slider"
-import { Link } from "@inertiajs/react";
+import { Head, Link } from "@inertiajs/react";
 import RootLayout from "./layout";
 
 export default function Welcome() {
   return (
     (<RootLayout>
       <div className="flex flex-col min-h-screen">
+      <Head title="InfiniMorph Consulting" />
       {/* Hero Section */}
       <section
         className="relative w-full min-h-[90vh] flex items-center justify-center overflow-hidden bg-gradient-to-br from-background via-background to-primary/10">

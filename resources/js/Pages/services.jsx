@@ -1,4 +1,4 @@
-import { Link } from "@inertiajs/react"
+import { Head, Link } from "@inertiajs/react"
 import { ArrowRight } from "lucide-react"
 import ServiceCard from "@/components/service-card"
 import RootLayout from "./layout"
@@ -7,6 +7,7 @@ export default function Services() {
   return (
     <RootLayout>
       <div className="flex flex-col min-h-screen">
+      <Head title="Services - InfiniMorph Consulting" />
       {/* Hero Section */}
       <section className="pt-24 pb-12 md:pt-32 md:pb-16 bg-muted/50">
         <div className="container px-4 mx-auto text-center">

@@ -8,7 +8,7 @@ export default function Contact() {
   return (
     <RootLayout>
       <div className="flex flex-col min-h-screen">
-      <Head title="Contact Us - TechInnovate" />
+      <Head title="Contact Us - InfiniMorph Consulting" />
 
       {/* Hero Section */}
       <section className="pt-24 pb-12 md:pt-32 md:pb-16 bg-muted/50">

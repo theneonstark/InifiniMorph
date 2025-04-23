@@ -73,7 +73,7 @@ export default function Blog() {
   return (
     <RootLayout>
       <div className="flex flex-col min-h-screen">
-      <Head title="Blog - TechInnovate" />
+      <Head title="Blog - InfiniMorph Consulting" />
 
       <section className="pt-24 pb-12 md:pt-32 md:pb-16 bg-muted/50">
         <div className="container px-4 mx-auto text-center">
