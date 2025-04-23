@@ -15,7 +15,7 @@ export default function UiUxDesignPage() {
         <div className="absolute inset-0"></div>
         <div className="container mx-auto px-4">
           <div className="relative pt-20">
-            <h1 className="text-3xl font-bold">UI/UX Designing</h1>
+            <h1 className="text-3xl font-bold">Company Registration</h1>
             <nav className="mt-4">
               <ol className="flex text-sm">
                 <li className="flex items-center">
@@ -24,7 +24,7 @@ export default function UiUxDesignPage() {
                   </Link>
                   <ChevronRight className="mx-2 h-4 w-4" />
                 </li>
-                <li className="">UI/UX Designing</li>
+                <li className="">Company Registration</li>
               </ol>
             </nav>
           </div>
@@ -36,14 +36,14 @@ export default function UiUxDesignPage() {
         <div className="grid grid-cols-1 gap-8 lg:grid-cols-3">
           {/* Sidebar */}
           <div className="lg:col-span-1">
-            <ServiceSidebar />
+            <ServiceSidebar label={'company'}/>
           </div>
 
           {/* Main Content */}
           <div className="lg:col-span-2">
             <Card className="border-none shadow-md bg-muted/50">
               <CardHeader>
-                <CardTitle className="text-2xl font-bold">UI/UX Designing</CardTitle>
+                <CardTitle className="text-2xl font-bold">Company Registration</CardTitle>
               </CardHeader>
               <CardContent className="space-y-6">
                 <p>
