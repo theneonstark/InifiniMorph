@@ -18,5 +18,13 @@ class EnquiryController
         ];
 
         Enquiries::create($data);
+
+        return response()->json(["status" => "ERR", 'message' => 'Something Went Wrong']);
+    }
+
+    public function enquiries(){
+        $data = Enquiries::all();
+
+        return response()->json($data);
     }
 }
