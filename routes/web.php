@@ -19,10 +19,15 @@ Route::group(['prefix' => 'services'], function () {
 
 Route::post('/enquiry', [EnquiryController::class, 'contact']);
 
-Route::get('/admin', function () {
-    return Inertia::render('Admin/sessionspage');
-});
 
 Route::group(["prefix" => "admin"], function () {
-    Route::get('/{type}', [AdminController::class, 'index']);
+    Route::group(['middleware' => 'guest'],function () {
+        Route::get('/login', fn () => Inertia::render('Admin/login'))->name('mylogin');
+        Route::post('/check', [AdminController::class, 'login']);
+    });
+    Route::group(['middleware' => 'auth'],function () {
+        Route::get('/logout', [AdminController::class, 'logout'])->name('logout');
+        Route::get('/{type}', [AdminController::class, 'index'])->name('dashboard');
+        Route::post('/store', [AdminController::class, 'store']);
+    });
 });
