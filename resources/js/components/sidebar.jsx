@@ -66,6 +66,16 @@ export function Sidebar() {
             Sessions
           </Link>
           <Link
+            href="/admin/access"
+            className={cn(
+              "flex items-center gap-3 rounded-lg px-3 py-2 text-sm font-medium hover:bg-accent hover:text-accent-foreground",
+              url === "/admin/access" ? "bg-accent text-accent-foreground" : "text-muted-foreground"
+            )}
+          >
+            <Clock className="h-4 w-4" />
+            Access
+          </Link>
+          <Link
             href="/admin/reviews"
             className={cn(
               "flex items-center gap-3 rounded-lg px-3 py-2 text-sm font-medium hover:bg-accent hover:text-accent-foreground",

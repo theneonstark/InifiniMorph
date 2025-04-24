@@ -17,6 +17,10 @@ import { Sidebar } from "@/components/sidebar";
 export default function AdminLayout({ children }) {
   const [sidebarOpen, setSidebarOpen] = useState(true);
 
+  const logout = () =>{
+    route.post("logout");
+  }
+
   return (
     <html lang="en">
       <body className="min-h-screen bg-background font-sans antialiased">
@@ -70,7 +74,7 @@ export default function AdminLayout({ children }) {
                   </DropdownMenuItem>
                   <DropdownMenuSeparator />
                   <DropdownMenuItem>
-                    <LogOut className="mr-2 h-4 w-4" />
+                    <LogOut onClick={logout} className="mr-2 h-4 w-4" />
                     <span>Log out</span>
                   </DropdownMenuItem>
                 </DropdownMenuContent>
