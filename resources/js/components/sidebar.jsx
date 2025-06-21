@@ -4,6 +4,9 @@ import cn from "classnames";
 
 export function Sidebar() {
   const { url } = usePage(); // Get the current URL from Inertia
+  const { auth } = usePage().props; // Get the auth object from Inertia props
+  const { user } = auth; // Get the user object from auth
+  const { name, email } = user; // Destructure the name and email from the user object
 
   return (
     <div className="flex h-full flex-col gap-2 p-4">
@@ -103,8 +106,8 @@ export function Sidebar() {
             <span className="text-sm font-medium">AD</span>
           </div>
           <div className="grid gap-0.5 text-sm">
-            <div className="font-medium">Admin User</div>
-            <div className="text-xs text-muted-foreground">admin@example.com</div>
+            <div className="font-medium">{name}</div>
+            <div className="text-xs text-muted-foreground">{email}</div>
           </div>
         </div>
       </div>

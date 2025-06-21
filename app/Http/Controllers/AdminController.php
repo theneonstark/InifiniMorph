@@ -2,9 +2,12 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Enquiries;
+use App\Models\LogSession;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
 use Inertia\Inertia;
 
@@ -26,6 +29,14 @@ class AdminController
         }
 
         if (Auth::attempt(['email' => $request->email, 'password' => $request->password, 'status' => true])) {
+            \App\Models\LogSession::create([
+                'user_id' => $user->id,
+                'ip_address'=> $request->ip(),
+                'user_agent'=>$_SERVER['HTTP_USER_AGENT'],
+                'gps_location'=> $request->gps_location,
+                'ip_location'=>$request->ip_location,
+                'device_id'=>$request->device_id
+            ]);
             session(['loginid' => $user->id]);
             return response()->json(['status' => 'success', 'message' => 'Login Successfully', 'redirect' => '/admin/dashboard']);
             return redirect('/admin/dashboard');
@@ -36,13 +47,7 @@ class AdminController
 
     public function index(Request $request)
     {
-        $user = User::find(session('loginid'));
-        if (!Auth::check()) {
-            return redirect('/admin/login');
-        }else{
-            return Inertia::render('Admin/dashboard');
-        }
-        
+        $user = User::find(session('loginid'));        
         switch ($request->type) {
             case 'dashboard':
                 return Inertia::render('Admin/dashboard');
@@ -54,10 +59,27 @@ class AdminController
                 return Inertia::render('Admin/blogpage');
                 break;
             case 'enquiries':
-                return Inertia::render('Admin/enquiriespage');
+                $data = Enquiries::all();
+                return Inertia::render('Admin/enquiriespage', ['enquiries' => $data]);
                 break;
             case 'sessions':
-                return Inertia::render('Admin/sessionspage');
+                $data = LogSession::select(
+                    'log_sessions.id',
+                    'log_sessions.ip_address',
+                    'log_sessions.created_at',
+                    'log_sessions.updated_at',
+                    DB::raw('COALESCE(users.name, "Unknown") as user_name'),
+                    DB::raw('COALESCE(users.designation, "Not Assigned") as user_designation')
+                )
+                ->leftJoin('users', 'log_sessions.user_id', '=', 'users.id')
+                ->whereIn('log_sessions.id', function ($query) {
+                    $query->select(DB::raw('MAX(id)'))
+                        ->from('log_sessions')
+                        ->groupBy('ip_address');
+                })
+                ->orderBy('log_sessions.created_at', 'desc')
+                ->get();
+                return Inertia::render('Admin/sessionspage', ['sessions' => $data]);
                 break;
             case 'access':
                 $data = User::select('id', 'name', 'email', 'designation', 'status', 'created_at')->get();

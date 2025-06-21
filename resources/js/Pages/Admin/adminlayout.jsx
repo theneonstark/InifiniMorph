@@ -13,12 +13,14 @@ import { Input } from "@/components/ui/input";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 
 import { Sidebar } from "@/components/sidebar";
+import axios from "axios";
 
 export default function AdminLayout({ children }) {
   const [sidebarOpen, setSidebarOpen] = useState(true);
 
   const logout = () =>{
-    route.post("logout");
+    alert()
+    axios.post('/admin/logout');
   }
 
   return (
@@ -73,8 +75,8 @@ export default function AdminLayout({ children }) {
                     <span>Settings</span>
                   </DropdownMenuItem>
                   <DropdownMenuSeparator />
-                  <DropdownMenuItem>
-                    <LogOut onClick={logout} className="mr-2 h-4 w-4" />
+                  <DropdownMenuItem onClick={logout}>
+                    <LogOut className="mr-2 h-4 w-4" />
                     <span>Log out</span>
                   </DropdownMenuItem>
                 </DropdownMenuContent>
